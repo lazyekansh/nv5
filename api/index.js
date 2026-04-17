@@ -16,17 +16,16 @@ module.exports = async (req, res) => {
             }
         });
 
-        const data = response.data;
+        const rawData = response.data;
         
-        const cleanData = {
+        const output = {
             developer: "lazyekansh",
-            status: data.status,
-            results: data.results || data
+            results: rawData.results?.result?.results || []
         };
 
         res.setHeader('Access-Control-Allow-Origin', '*');
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(cleanData);
+        res.status(200).json(output);
     } catch (error) {
         res.status(500).json({ 
             error: "Proxy Error", 
