@@ -14,7 +14,7 @@ export default async function handler(req, res) {
 
   try {
     // Construct the target URL
-    const targetUrl = `http://api.subhxcosmo.in/api?key=${key}&type=${type}&term=${term}`;
+    const targetUrl = `http://api.subhxcosmo.in/api?key=suryansh&type=${type}&term=${term}`;
 
     // Fetch data from the external API
     const response = await fetch(targetUrl);
